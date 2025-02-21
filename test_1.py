@@ -154,6 +154,10 @@ class Pension_Total_Test(unittest.TestCase):
 
         self.assertAlmostEqual(expected, result, 2)
 
-
+class Calculadora_ibl_Test(unittest.TestCase):
+    pass
 if __name__ == "__main__":
     unittest.main()
+
+
+
