@@ -11,7 +11,7 @@ def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hi
     pension = suma(lista) / len(lista) * 0.65
 
     if (genero == "masculino" and edad >= 62 and semanas >= 1300):
-        if pension < 1423500:
+        if pension < 1423500:  
             return 1423500
         else:
             return pension
@@ -20,10 +20,13 @@ def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hi
         if num_hijos > 3:
             num_hijos = 3
         
-        cuenta_semanas = semanas - (50 * num_hijos)
+        cuenta_semanas = 1000 - (50 * num_hijos)
 
-        if (cuenta_semanas >= semanas):
+        if (semanas >= cuenta_semanas):
             return pension
+        
+        else:
+            return "No cumple con todos los requisitos"
 
     else:
         return "No cumple con todos los requisitos"

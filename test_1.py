@@ -73,6 +73,21 @@ class CalculatorTest(unittest.TestCase):
 
         self.assertAlmostEqual(expected, result, 2)
 
+
+    def test_extraordinario2(self):
+        lista = [3900000, 1569875, 1750000, 1800000, 2000000, 2356987, 2565450, 2900000, 3250000, 3498520]
+        genero = "femenino"
+        edad = 57 
+        semanas = 900
+        num_hijos = 2
+
+        #Datos de salida
+        expected = 1663404.08
+
+        #Proceso
+        result = pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
+
+        self.assertAlmostEqual(expected, result, 2)
         
 
 
