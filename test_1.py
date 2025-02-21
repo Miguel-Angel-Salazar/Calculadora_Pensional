@@ -155,7 +155,19 @@ class Pension_Total_Test(unittest.TestCase):
         self.assertAlmostEqual(expected, result, 2)
 
 class Calculadora_ibl_Test(unittest.TestCase):
-    pass
+    
+    def test_proN1(self):
+        #Entradas
+        lista = [4000000, 3100000, 3200000, 3300000, 3400000, 3500000, 3600000, 3700000, 3800000, 3900000]
+
+        expected = 3550000
+
+        result = pylogic.calculo_IBL(lista)
+
+        self.assertAlmostEqual(expected, result, 2)
+
+
+
 if __name__ == "__main__":
     unittest.main()
 
