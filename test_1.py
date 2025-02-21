@@ -2,7 +2,7 @@ import unittest
 import pylogic 
 
 
-class CalculatorTest(unittest.TestCase):
+class Pension_Total_Test(unittest.TestCase):
 
     def test_normal1(self):
 

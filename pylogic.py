@@ -1,14 +1,14 @@
-def suma(lista: list[int], idx = 0):
+def calculo_IBL(lista: list[int], idx = 0):
     if idx == len(lista):
         return 0
     
-    return lista[idx] + suma(lista, idx + 1)
+    return lista[idx] + calculo_IBL(lista, idx + 1)
 
 def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hijos: int):
     if not lista:
         return 0
     
-    pension = suma(lista) / len(lista) * 0.65
+    pension = calculo_IBL(lista) / len(lista) * 0.65
 
     if (genero == "masculino" and edad >= 62 and semanas >= 1300):
         if pension < 1423500:  
