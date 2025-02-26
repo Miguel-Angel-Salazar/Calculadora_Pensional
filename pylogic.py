@@ -11,7 +11,7 @@ def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hi
     pension = calculo_IBL(lista) / len(lista) * 0.65
 
     if (genero == "Masculino" and edad >= 62 and semanas >= 1300):
-        if pension < 1423500:  
+        if pension < 1423500:
             return 1423500
         else:
             return pension
