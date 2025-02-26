@@ -17,7 +17,10 @@ def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hi
             return pension
     
     elif (genero == "Femenino" and edad >= 57):
-        if num_hijos > 3:
+        if pension < 1423500:
+            return 1423500
+        
+        if num_hijos > 3: 
             num_hijos = 3
         
         cuenta_semanas = 1000 - (50 * num_hijos)
