@@ -221,7 +221,6 @@ class Calculadora_ibl_Test(unittest.TestCase):
 
         self.assertAlmostEqual(expected, result, 2)
 
-
 if __name__ == "__main__":
     unittest.main()
 
