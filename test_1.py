@@ -210,9 +210,9 @@ class Calculadora_ibl_Test(unittest.TestCase):
 
     def test_IBL_error(self):
         
-        lista = [1000000, 350000, 355684, 456878, 478945, 565875, 635000, 710000, 742690, 795624]
+        lista = [1000000, -350000, 355684, 456878, 478945, 565875, 635000, 710000, 742690, 795624]
 
-        with self.assertRaises(pylogic.Lowersalary):
+        with self.assertRaises(pylogic.NegativeNum):
             pylogic.calculo_IBL(lista)
 
 if __name__ == "__main__":
