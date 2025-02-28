@@ -1,5 +1,6 @@
 import pylogic
 
+
 #Metodos
 def gender_asigned(valor):
     match valor:
@@ -8,6 +9,9 @@ def gender_asigned(valor):
         
         case (2):
             return "Femenino"
+        
+        case(3):
+            raise ValueError("Selección inválida. Debe ser 1 (Masculino) o 2 (Femenino)")
 
 #Creacion de variables
 lista = []
@@ -38,5 +42,4 @@ try:
 
 except Exception as e:
     print(f"\n❌ Error: {e}") 
-
 
