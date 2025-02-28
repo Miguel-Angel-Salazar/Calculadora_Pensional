@@ -136,6 +136,11 @@ class Pension_Total_Test(unittest.TestCase):
         semanas = 740
         num_hijos = 2
 
+        with self.assertRaises(pylogic.InvalidDatesError):
+            pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
+
+       
+
 class Calculadora_ibl_Test(unittest.TestCase):
     
     def test_IBL_Nor1(self):
