@@ -9,7 +9,7 @@ def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hi
         return 0
     
     if genero == "Femenino" and edad < 57:
-        raise Exception("No cumple con la edad requerida para la pensión")
+        raise Exception("No cumple con la edad requerida para la pensión  ")
     if genero == "Masculino" and edad < 62:
         raise Exception("No cumple con la edad requerida para la pensión")
     
