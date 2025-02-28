@@ -1,6 +1,6 @@
 class NegativeNum(Exception):
-    def __init__(self, lista ):
-        super().__init__(lista).__init__(f"Al parecer dijitaste un numero incorrecto, verifica los datos.")
+    def __init__(self):
+        super().__init__(f"Al parecer dijitaste un numero incorrecto, verifica los datos.")
 
 class InvalidAgeError(Exception):
     def __init__(self, edad):
@@ -17,7 +17,7 @@ def calculo_IBL(lista: list[int], idx = 0):
         return 0
     
     if lista[idx] < 0:
-        raise NegativeNum(lista)
+        raise NegativeNum()
     
     
     return lista[idx] + calculo_IBL(lista, idx + 1)

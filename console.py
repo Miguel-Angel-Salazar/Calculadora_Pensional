@@ -25,7 +25,6 @@ print("\n          Bienvenidos a la calculadora \n------------------------------
 try:
     gen_select = int(input("Por favor selecciona tu género: \n\n 1. Masculino \n 2. Femenino \n\nSelección: "))
     genero = gender_asigned(gen_select)
-
     edad = int(input("Ingresa tu edad actual: "))
     semanas = int(input("Ingrese el total de semanas cotizadas: "))
     num_hijos = int(input("¿Cuántos hijos tienes?: "))
