@@ -125,13 +125,8 @@ class Pension_Total_Test(unittest.TestCase):
         semanas = 700
         num_hijos = 1
 
-        #Datos de salida
-        expected = "No cumple con todos los requisitos"
-
-        #Proceso
-        result = pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
-
-        self.assertAlmostEqual(expected, result, 2)
+        with self.assertRaises(pylogic.InvalidWeeksError):
+            pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
 
 
     def test_error3(self):
