@@ -114,13 +114,8 @@ class Pension_Total_Test(unittest.TestCase):
         semanas = 1300
         num_hijos = 1
 
-        #Datos de salida
-        expected = "No cumple con todos los requisitos"
-        
-        #Proceso 
-        result = pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
-
-        self.assertAlmostEqual(expected, result, 2)
+        with self.assertRaises(pylogic.InvalidAgeError):
+            pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
     
 
     def test_error2(self):
@@ -146,13 +141,6 @@ class Pension_Total_Test(unittest.TestCase):
         semanas = 740
         num_hijos = 2
 
-        #Datos de salida
-        expected = "No cumple con todos los requisitos"
-
-        #Proceso
-        result = pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
-
-        self.assertAlmostEqual(expected, result, 2)
 
 class Calculadora_ibl_Test(unittest.TestCase):
     
