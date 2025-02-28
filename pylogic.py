@@ -1,3 +1,9 @@
+class InvalidAgeError(Exception):
+    def __init__(self, edad):
+        super().__init__(f"""Edad inferior a la permitida para solicitar un fondo de pensiones. {edad}"""
+)
+    
+
 def calculo_IBL(lista: list[int], idx = 0):
     if idx == len(lista):
         return 0
@@ -9,9 +15,9 @@ def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hi
         return 0
     
     if genero == "Femenino" and edad < 57:
-        raise Exception("No cumple con la edad requerida para la pensión  ")
+        raise InvalidAgeError(edad)
     if genero == "Masculino" and edad < 62:
-        raise Exception("No cumple con la edad requerida para la pensión")
+        raise InvalidAgeError(edad)
     
     pension = calculo_IBL(lista) / len(lista) * 0.65
 
