@@ -141,7 +141,6 @@ class Pension_Total_Test(unittest.TestCase):
         semanas = 740
         num_hijos = 2
 
-
 class Calculadora_ibl_Test(unittest.TestCase):
     
     def test_IBL_Nor1(self):
@@ -208,6 +207,13 @@ class Calculadora_ibl_Test(unittest.TestCase):
         result = pylogic.calculo_IBL(lista)
 
         self.assertAlmostEqual(expected, result, 2)
+
+    def test_IBL_error(self):
+        
+        lista = [1000000, 350000, 355684, 456878, 478945, 565875, 635000, 710000, 742690, 795624]
+
+        with self.assertRaises(pylogic.Lowersalary):
+            pylogic.calculo_IBL(lista)
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,3 +1,7 @@
+class Lowersalary(Exception):
+    def __init__(self, lista ):
+        super().__init__(lista).__init__(f"Su salario {lista} no coincide con el salario minimo del pais")
+
 class InvalidAgeError(Exception):
     def __init__(self, edad):
         super().__init__(f"""Edad inferior a la permitida para solicitar un fondo de pensiones. {edad}"""
@@ -8,7 +12,12 @@ def calculo_IBL(lista: list[int], idx = 0):
     if idx == len(lista):
         return 0
     
+    if lista[idx] < 1423500:
+        raise Lowersalary(lista)
+    
+    
     return lista[idx] + calculo_IBL(lista, idx + 1)
+
 
 def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hijos: int):
     if not lista:
@@ -19,6 +28,7 @@ def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hi
     if genero == "Masculino" and edad < 62:
         raise InvalidAgeError(edad)
     
+
     pension = calculo_IBL(lista) / len(lista) * 0.65
 
     if (genero == "Masculino" and edad >= 62 and semanas >= 1300):
