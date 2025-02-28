@@ -34,15 +34,15 @@ def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hi
             num_hijos = 3
         
     cuenta_semanas = 1000 - (50 * num_hijos)
-    
+
+    if (genero == "Femenino" and semanas < 1000 - (50 * num_hijos) and edad < 57) or (genero == "Masculino" and semanas < 1300 and edad < 62):
+        raise InvalidDatesError()
     if genero == "Femenino" and edad < 57:
         raise InvalidAgeError(edad)
     if genero == "Masculino" and edad < 62:
         raise InvalidAgeError(edad)
     if genero == "Femenino" and semanas < 1000 - (50 * num_hijos):
         raise InvalidWeeksError(cuenta_semanas, semanas)
-    if (genero == "Femenino" and semanas < 1000 - (50 * num_hijos) and edad < 57) and (genero == "Masculino" and semanas < 1300 and edad < 62):
-        raise InvalidDatesError()
     
 
     pension = calculo_IBL(lista) / len(lista) * 0.65
