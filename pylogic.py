@@ -1,6 +1,6 @@
-class Lowersalary(Exception):
+class NegativeNum(Exception):
     def __init__(self, lista ):
-        super().__init__(lista).__init__(f"Su salario {lista} no coincide con el salario minimo del pais")
+        super().__init__(lista).__init__(f"Al parecer dijitaste un numero incorrecto, verifica los datos.")
 
 class InvalidAgeError(Exception):
     def __init__(self, edad):
@@ -16,8 +16,8 @@ def calculo_IBL(lista: list[int], idx = 0):
     if idx == len(lista):
         return 0
     
-    if lista[idx] < 1423500:
-        raise Lowersalary(lista)
+    if lista[idx] < 0:
+        raise NegativeNum(lista)
     
     
     return lista[idx] + calculo_IBL(lista, idx + 1)
