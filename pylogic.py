@@ -8,6 +8,11 @@ def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hi
     if not lista:
         return 0
     
+    if genero == "Femenino" and edad < 57:
+        raise Exception("No cumple con la edad requerida para la pensión")
+    if genero == "Masculino" and edad < 62:
+        raise Exception("No cumple con la edad requerida para la pensión")
+    
     pension = calculo_IBL(lista) / len(lista) * 0.65
 
     if (genero == "Masculino" and edad >= 62 and semanas >= 1300):
@@ -16,7 +21,9 @@ def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hi
         else:
             return pension
     
-    elif (genero == "Femenino" and edad >= 57):
+    if (genero == "Femenino" and edad >= 57):
+        if edad < 57:
+            raise Exception("No cumple con la edad requerida")
         if pension < 1423500:
             return 1423500
         

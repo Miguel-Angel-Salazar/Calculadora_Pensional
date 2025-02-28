@@ -15,25 +15,28 @@ genero = ""
 edad = 0
 semanas = 0
 
-#Comunicacion con el usuario
-print("\n          Bienvenidos a la calculadora \n--------------------------------------------------\n\nPorfavor ingresa tu salario de los ultimos 10 años\n")
+# Comunicación con el usuario
+print("\n          Bienvenidos a la calculadora \n--------------------------------------------------\n\nPor favor ingresa tu salario de los últimos 10 años\n")
 
+try:
+    gen_select = int(input("Por favor selecciona tu género: \n\n 1. Masculino \n 2. Femenino \n\nSelección: "))
+    genero = gender_asigned(gen_select)
 
-gen_select = int(input(f"Por favor selecciona tu genero: \n\n 1. Masculino \n 2. Femenino \n\nSeleccion: "))
-genero = gender_asigned(gen_select)
+    edad = int(input("Ingresa tu edad actual: "))
+    semanas = int(input("Ingrese el total de semanas cotizadas: "))
+    num_hijos = int(input("¿Cuántos hijos tienes?: "))
 
-edad = int(input("Ingresa tu edad actual: "))
-semanas = int(input("ingrese el total de semanas cotizadas: "))
-num_hijos = int(input("Cuantos Hijos tienes: "))
+    lista = []
+    for i in range(1, 11):
+        salario = int(input(f"Ingrese su salario {i}: "))
+        lista.append(salario)
 
-for i in range(1, 11, 1):
-    i = int(input(f"Ingrese su {i} salario: "))
-    lista.append(i)
+    print(lista)
 
+    # Comunicación con la lógica
+    print(pylogic.pension_total(lista, genero, edad, semanas, num_hijos))
 
-print(lista)
+except Exception as e:
+    print(f"\n❌ Error: {e}") 
 
-
-#Comunicacion con la logica
-print(pylogic.pension_total(lista, genero, edad, semanas, num_hijos))
 
