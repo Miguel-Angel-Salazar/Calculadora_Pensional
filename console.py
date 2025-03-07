@@ -23,8 +23,8 @@ semanas = 0
 print("\n          Bienvenidos a la calculadora \n--------------------------------------------------\n\nPor favor ingresa tu salario de los últimos 10 años\n")
 
 try:
-    sleccionar_genero = int(input("Por favor selecciona tu género: \n\n 1. Masculino \n 2. Femenino \n\nSelección: "))
-    genero = asignar_genero(sleccionar_genero)
+    gen_select = int(input("Por favor selecciona tu género: \n\n 1. Masculino \n 2. Femenino \n\nSelección: "))
+    genero = gender_asigned(gen_select)
 
     edad = int(input("Ingresa tu edad actual: "))
     semanas = int(input("Ingrese el total de semanas cotizadas: "))
