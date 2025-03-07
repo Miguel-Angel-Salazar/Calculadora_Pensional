@@ -11,16 +11,16 @@ class Pension_Total_Test(unittest.TestCase):
         genero = "Femenino"
         edad = 57
         semanas = 1000
-        num_hijos = 0
+        numero_hijos = 0
 
         #Datos de salida
-        expected = 2307500
+        esperado = 2307500
 
         #proceso
-        result = pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
+        resultado = pylogic.pension_total(lista, genero, edad, semanas, numero_hijos)
 
         #Comprobacion
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(esperado, resultado, 2)
     
 
     def test_normal2(self):
@@ -29,15 +29,15 @@ class Pension_Total_Test(unittest.TestCase):
         genero = "Femenino"
         edad = 59
         semanas = 1000
-        num_hijos = 0
+        numero_hijos = 0
 
         #Datos de salida
-        expected = 2606500
+        esperado = 2606500
 
         #proceso
-        result = pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
+        resultado = pylogic.pension_total(lista, genero, edad, semanas, numero_hijos)
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(esperado, resultado, 2)
     
 
     def test_normal3(self):
@@ -46,15 +46,15 @@ class Pension_Total_Test(unittest.TestCase):
         genero = "Masculino"
         edad = 62
         semanas = 1300
-        num_hijos = 0
+        numero_hijos = 0
 
         #Datos de salida
-        expected =  5572315.97
+        esperado =  5572315.97
 
         #proceso
-        result = pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
+        resultado = pylogic.pension_total(lista, genero, edad, semanas, numero_hijos)
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(esperado, resultado, 2)
 
 
 
@@ -63,15 +63,15 @@ class Pension_Total_Test(unittest.TestCase):
         genero = "Masculino"
         edad = 65
         semanas = 1300
-        num_hijos = 1
+        numero_hijos = 1
 
         #Datos de salida
-        expected = 1423500
+        esperado = 1423500
 
         #Proceso
-        result = pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
+        resultado = pylogic.pension_total(lista, genero, edad, semanas, numero_hijos)
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(esperado, resultado, 2)
 
 
     def test_extraordinario2(self):
@@ -79,15 +79,15 @@ class Pension_Total_Test(unittest.TestCase):
         genero = "Femenino"
         edad = 57 
         semanas = 900
-        num_hijos = 2
+        numero_hijos = 2
 
         #Datos de salida
-        expected = 1663404.08
+        esperado = 1663404.08
 
         #Proceso
-        result = pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
+        resultado = pylogic.pension_total(lista, genero, edad, semanas, numero_hijos)
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(esperado, resultado, 2)
 
 
     def test_extraordinario3(self):
@@ -95,16 +95,16 @@ class Pension_Total_Test(unittest.TestCase):
         genero = "Femenino"
         edad = 59
         semanas = 850
-        num_hijos = 3
+        numero_hijos = 3
 
         #Datos de salida
-        expected = 2220913.37
+        esperado = 2220913.37
 
         #Proceso
-        result = pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
+        resultado = pylogic.pension_total(lista, genero, edad, semanas, numero_hijos)
 
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(esperado, resultado, 2)
     
 
     def test_error1(self):
@@ -112,10 +112,10 @@ class Pension_Total_Test(unittest.TestCase):
         genero = "Masculino"
         edad = 58
         semanas = 1300
-        num_hijos = 1
+        numero_hijos = 1
 
         with self.assertRaises(pylogic.InvalidAgeError):
-            pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
+            pylogic.pension_total(lista, genero, edad, semanas, numero_hijos)
     
 
     def test_error2(self):
@@ -123,10 +123,10 @@ class Pension_Total_Test(unittest.TestCase):
         genero = "Femenino"
         edad = 57
         semanas = 700
-        num_hijos = 1
+        numero_hijos = 1
 
         with self.assertRaises(pylogic.InvalidWeeksError):
-            pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
+            pylogic.pension_total(lista, genero, edad, semanas, numero_hijos)
 
 
     def test_error3(self):
@@ -134,10 +134,10 @@ class Pension_Total_Test(unittest.TestCase):
         genero = "Femenino"
         edad = 55
         semanas = 740
-        num_hijos = 2
+        numero_hijos = 2
 
         with self.assertRaises(pylogic.InvalidDatesError):
-            pylogic.pension_total(lista, genero, edad, semanas, num_hijos)
+            pylogic.pension_total(lista, genero, edad, semanas, numero_hijos)
 
        
 
@@ -149,9 +149,9 @@ class Calculadora_ibl_Test(unittest.TestCase):
 
         expected = 35500000
 
-        result = pylogic.calculo_IBL(lista)
+        resultado = pylogic.calculo_IBL(lista)
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(expected, resultado, 2)
 
     
     def test_IBL_Nor2(self):
@@ -160,9 +160,9 @@ class Calculadora_ibl_Test(unittest.TestCase):
 
         expected = 40100000
 
-        result = pylogic.calculo_IBL(lista)
+        resultado = pylogic.calculo_IBL(lista)
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(expected, resultado, 2)
     
 
     def test_IBL_Nor3(self):
@@ -171,9 +171,9 @@ class Calculadora_ibl_Test(unittest.TestCase):
 
         expected = 85727938
 
-        result = pylogic.calculo_IBL(lista)
+        resultado = pylogic.calculo_IBL(lista)
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(expected, resultado, 2)
     
     
     def test_IBL_Extra1(self):
@@ -182,9 +182,9 @@ class Calculadora_ibl_Test(unittest.TestCase):
 
         expected = 9582859
 
-        result = pylogic.calculo_IBL(lista)
+        resultado = pylogic.calculo_IBL(lista)
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(expected, resultado, 2)
 
 
     def test_IBL_Extra2(self):
@@ -193,9 +193,9 @@ class Calculadora_ibl_Test(unittest.TestCase):
 
         expected = 25590832
 
-        result = pylogic.calculo_IBL(lista)
+        resultado = pylogic.calculo_IBL(lista)
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(expected, resultado, 2)
 
     
     def test_IBL_Extra3(self):
@@ -204,9 +204,9 @@ class Calculadora_ibl_Test(unittest.TestCase):
 
         expected = 34167898
 
-        result = pylogic.calculo_IBL(lista)
+        resultado = pylogic.calculo_IBL(lista)
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(expected, resultado, 2)
 
     def test_IBL_error(self):
         

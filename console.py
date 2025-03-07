@@ -2,7 +2,7 @@ import pylogic
 
 
 #Metodos
-def gender_asigned(valor):
+def asignar_genero(valor):
     match valor:
         case (1):
             return "Masculino"
@@ -14,7 +14,7 @@ def gender_asigned(valor):
             raise ValueError("Selección inválida. Debe ser 1 (Masculino) o 2 (Femenino)")
 
 #Creacion de variables
-lista = []
+lista_salarios = []
 genero = ""
 edad = 0
 semanas = 0
@@ -23,22 +23,22 @@ semanas = 0
 print("\n          Bienvenidos a la calculadora \n--------------------------------------------------\n\nPor favor ingresa tu salario de los últimos 10 años\n")
 
 try:
-    gen_select = int(input("Por favor selecciona tu género: \n\n 1. Masculino \n 2. Femenino \n\nSelección: "))
-    genero = gender_asigned(gen_select)
+    sleccionar_genero = int(input("Por favor selecciona tu género: \n\n 1. Masculino \n 2. Femenino \n\nSelección: "))
+    genero = asignar_genero(sleccionar_genero)
 
     edad = int(input("Ingresa tu edad actual: "))
     semanas = int(input("Ingrese el total de semanas cotizadas: "))
-    num_hijos = int(input("¿Cuántos hijos tienes?: "))
+    numero_hijos = int(input("¿Cuántos hijos tienes?: "))
 
-    lista = []
+    lista_salarios = []
     for i in range(1, 11):
         salario = int(input(f"Ingrese su salario {i}: "))
-        lista.append(salario)
+        lista_salarios.append(salario)
 
-    print(lista)
+    print(lista_salarios)
 
     # Comunicación con la lógica
-    print(pylogic.pension_total(lista, genero, edad, semanas, num_hijos))
+    print(pylogic.pension_total(lista_salarios, genero, edad, semanas, numero_hijos))
 
 except Exception as e:
     print(f"\n❌ Error: {e}") 

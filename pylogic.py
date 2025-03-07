@@ -1,6 +1,6 @@
 class NegativeNum(Exception):
-    def __init__(self, lista ):
-        super().__init__(lista).__init__(f"Al parecer dijitaste un numero incorrecto, verifica los datos.")
+    def __init__(self):
+        super().__init__(f"Al parecer dijitaste un numero incorrecto, verifica los datos.")
 
 class InvalidAgeError(Exception):
     def __init__(self, edad):
@@ -20,28 +20,28 @@ def calculo_IBL(lista: list[int], idx = 0):
         return 0
     
     if lista[idx] < 0:
-        raise NegativeNum(lista)
+        raise NegativeNum()
     
     
     return lista[idx] + calculo_IBL(lista, idx + 1)
 
 
-def pension_total(lista: list[int], genero: str, edad: int, semanas: int, num_hijos: int):
+def pension_total(lista: list[int], genero: str, edad: int, semanas: int, numero_hijos: int):
     if not lista:
         return 0
     
-    if num_hijos > 3: 
-            num_hijos = 3
+    if numero_hijos > 3: 
+            numero_hijos = 3
         
-    cuenta_semanas = 1000 - (50 * num_hijos)
+    cuenta_semanas = 1000 - (50 * numero_hijos)
 
-    if (genero == "Femenino" and semanas < 1000 - (50 * num_hijos) and edad < 57) or (genero == "Masculino" and semanas < 1300 and edad < 62):
+    if (genero == "Femenino" and semanas < 1000 - (50 * numero_hijos) and edad < 57) or (genero == "Masculino" and semanas < 1300 and edad < 62):
         raise InvalidDatesError()
     if genero == "Femenino" and edad < 57:
         raise InvalidAgeError(edad)
     if genero == "Masculino" and edad < 62:
         raise InvalidAgeError(edad)
-    if genero == "Femenino" and semanas < 1000 - (50 * num_hijos):
+    if genero == "Femenino" and semanas < 1000 - (50 * numero_hijos):
         raise InvalidWeeksError(cuenta_semanas, semanas)
     
 
