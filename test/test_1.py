@@ -1,5 +1,7 @@
+import sys
+sys.path.append("src")
 import unittest
-import pylogic 
+from model import pylogic 
 
 
 class Pension_Total_Test(unittest.TestCase):

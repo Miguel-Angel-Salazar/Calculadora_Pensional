@@ -1,5 +1,6 @@
-import pylogic
-
+import sys
+sys.path.append("src")
+from model import pylogic
 
 #Metodos
 def asignar_genero(valor):
