@@ -54,6 +54,7 @@ Esto ejecutará todas las pruebas ubicadas en la carpeta `tests`.
 Si deseas probar funciones específicas en la consola de Python, sigue estos pasos:
 
 1. Abre la terminal y activa el entorno virtual (si no está activado).
+
 2. Ingresa al modo interactivo de Python:
    ```bash
    python
@@ -78,6 +79,21 @@ El programa maneja los siguientes errores:
 
 ---
 
+## Uso
+
+   1. Para ejecutar las pruebas unitarias, ejecute el siguiente comando desde la raiz:
+      ```bash
+      py test/test_1.py
+      ```
+   
+   2. Para ejecutar el programa, corra el siguiente comando desde la raiz:
+      ```bash
+      py src/view/console.py
+      ```
+   
+      
+
+---
 **Autores: Simon Correa Bravo, David Hernández Mejía**\
 **Repositorio:** [GitHub](https://github.com/tu-usuario/tu-repositorio)
 
