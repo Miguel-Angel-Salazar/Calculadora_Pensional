@@ -91,8 +91,7 @@ El programa maneja los siguientes errores:
       py src/view/console.py
       ```
    
-      
-
+   
 ---
 **Autores: Simon Correa Bravo, David Hernández Mejía**\
 **Repositorio:** [GitHub](https://github.com/tu-usuario/tu-repositorio)

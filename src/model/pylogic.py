@@ -1,3 +1,7 @@
+Porcentaje_pension = 0.65
+salario_minimo = 1423500
+semanas_mujer = 1000
+
 class NegativeNum(Exception):
     def __init__(self):
         super().__init__(f"Al parecer dijitaste un numero incorrecto, verifica los datos.")
@@ -33,29 +37,29 @@ def pension_total(lista: list[int], genero: str, edad: int, semanas: int, numero
     if numero_hijos > 3: 
             numero_hijos = 3
         
-    cuenta_semanas = 1000 - (50 * numero_hijos)
+    cuenta_semanas = semanas_mujer - (50 * numero_hijos)
 
-    if (genero == "Femenino" and semanas < 1000 - (50 * numero_hijos) and edad < 57) or (genero == "Masculino" and semanas < 1300 and edad < 62):
+    if (genero == "Femenino" and semanas < semanas_mujer - (50 * numero_hijos) and edad < 57) or (genero == "Masculino" and semanas < 1300 and edad < 62):
         raise InvalidDatesError()
     if genero == "Femenino" and edad < 57:
         raise InvalidAgeError(edad)
     if genero == "Masculino" and edad < 62:
         raise InvalidAgeError(edad)
-    if genero == "Femenino" and semanas < 1000 - (50 * numero_hijos):
+    if genero == "Femenino" and semanas < semanas_mujer - (50 * numero_hijos):
         raise InvalidWeeksError(cuenta_semanas, semanas)
     
 
-    pension = calculo_IBL(lista) / len(lista) * 0.65
+    pension = calculo_IBL(lista) / len(lista) * Porcentaje_pension
 
     if (genero == "Masculino" and edad >= 62 and semanas >= 1300):
-        if pension < 1423500:
-            return 1423500
+        if pension < salario_minimo:
+            return salario_minimo
         else:
             return pension
     
     if (genero == "Femenino" and edad >= 57):
-        if pension < 1423500:
-            return 1423500
+        if pension < salario_minimo:
+            return salario_minimo
 
         if (semanas >= cuenta_semanas):
             return pension
