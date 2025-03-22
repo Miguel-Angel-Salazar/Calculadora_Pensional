@@ -19,6 +19,7 @@ lista_salarios = []
 genero = ""
 edad = 0
 semanas = 0
+maximo_salarios = 11
 
 # Comunicación con el usuario
 print("\n          Bienvenidos a la calculadora \n--------------------------------------------------\n\nPor favor ingresa tu salario de los últimos 10 años\n")
@@ -32,7 +33,7 @@ try:
     numero_hijos = int(input("¿Cuántos hijos tienes?: "))
 
     lista_salarios = []
-    for i in range(1, 11):
+    for i in range(1, maximo_salarios):
         salario = int(input(f"Ingrese su salario {i}: "))
         lista_salarios.append(salario)
 
