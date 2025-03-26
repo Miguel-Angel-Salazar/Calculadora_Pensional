@@ -37,8 +37,6 @@ try:
         salario = int(input(f"Ingrese su salario {i}: "))
         lista_salarios.append(salario)
 
-    print(lista_salarios)
-
     # Comunicación con la lógica
     print(pylogic.pension_total(lista_salarios, genero, edad, semanas, numero_hijos))
 
