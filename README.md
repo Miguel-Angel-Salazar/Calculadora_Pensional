@@ -7,7 +7,6 @@ Este proyecto permite calcular la pensión con base en los salarios de los últi
 ```
 código_limpio/
 │
-├── .gitignore
 ├── README.md
 │
 ├── src/
