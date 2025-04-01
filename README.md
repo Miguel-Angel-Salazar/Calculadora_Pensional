@@ -10,12 +10,12 @@ código_limpio/
 ├── README.md
 │
 ├── src/
-│   ├── controller/          # (vacío)
+│   ├── controller/          
 │   ├── model/
-│   │   └── pylogic.py       # Lógica de negocio
+│   │   └── pylogic.py      
 │   └── view/
-│       ├── console.py       # Vista en consola
-│       └── kivyApp.py       # Vista con Kivy (GUI)
+│       ├── console.py       
+│       └── kivyApp.py      
 │
 └── test/
     └── test_1.py            # Pruebas unitarias
