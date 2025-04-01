@@ -2,6 +2,26 @@
 
 Este proyecto permite calcular la pensión con base en los salarios de los últimos 10 años, la edad, las semanas cotizadas y el número de hijos. Además, maneja excepciones personalizadas para validar las condiciones de edad y semanas cotizadas.
 
+## Estructura del proyecto
+
+```
+código_limpio/
+│
+├── .gitignore
+├── README.md
+│
+├── src/
+│   ├── controller/          # (vacío)
+│   ├── model/
+│   │   └── pylogic.py       # Lógica de negocio
+│   └── view/
+│       ├── console.py       # Vista en consola
+│       └── kivyApp.py       # Vista con Kivy (GUI)
+│
+└── test/
+    └── test_1.py            # Pruebas unitarias
+```
+
 ## Requisitos previos
 
 - Python 3.10 o superior
@@ -90,11 +110,10 @@ El programa maneja los siguientes errores:
       ```bash
       py src/view/console.py
       ```
-   
-   
+
 ---
 **Autores: Simon Correa Bravo, David Hernández Mejía**\
-**Repositorio:** [GitHub](https://github.com/tu-usuario/tu-repositorio)
+**Repositorio:** [GitHub](https://github.com/David2421b/Calculadora_Pensional.git)
 
 
 ## Entrevista  
