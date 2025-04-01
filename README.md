@@ -18,7 +18,7 @@ código_limpio/
 │       └── kivyApp.py      
 │
 └── test/
-    └── test_1.py            # Pruebas unitarias
+    └── test_1.py           
 ```
 
 ## Requisitos previos
