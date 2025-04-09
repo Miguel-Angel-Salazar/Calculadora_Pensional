@@ -94,7 +94,7 @@ Para ejecutar la interfaz grafica se debe hacer lo siguiente:
 3. Desde la carpeta src del repositorio, se utiliza el comando python .\view\interfaz.py
 4. Ejecutar.
 
-Desde Visual Studio Code
+**Desde Visual Studio Code**
 1. Pararse en la carpeta view,interfaz.py.
 2. Abrir la terminal e installar kivy con el siguiente comando pip install kivy.
 3. En la parte superior se encuentra el siguiente icono (play) clic izquierdo y se ejecutara la interfaz. 
@@ -125,8 +125,8 @@ El programa maneja los siguientes errores:
 
 ---
 **Autores: Simon Correa Bravo, David Hernández Mejía**\
-**Interfaz grafica: Miguel Angel guarnizo, Tomas Mercado
-**Repositorio:** [GitHub](https://github.com/David2421b/Calculadora_Pensional.git)
+**Interfaz grafica: Miguel Angel guarnizo, Tomas Mercado**
+
 
 
 ## Entrevista  
