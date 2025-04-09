@@ -18,17 +18,15 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 try:
     from model import pylogic
 except ImportError:
-    # Mock para poder probar sin el módulo
     class PyLogicMock:
         def pension_total(self, *args, **kwargs):
             return 25000.0
     pylogic = PyLogicMock()
 
-# Colores para la aplicación
-primary_color = [0.2, 0.6, 0.5, 1]  # Verde azulado similar al de la imagen
-light_bg_color = [0.95, 0.95, 0.95, 1]  # Fondo claro
-text_color = [0.2, 0.2, 0.2, 1]  # Texto oscuro
-visible_text_color = [0.1, 0.1, 0.1, 1]  # Color de texto más oscuro para mejor visibilidad
+primary_color = [0.2, 0.6, 0.5, 1]  
+light_bg_color = [0.95, 0.95, 0.95, 1]  
+text_color = [0.2, 0.2, 0.2, 1]  
+visible_text_color = [0.1, 0.1, 0.1, 1]  
 
 class BorderedLabel(Label):
     def __init__(self, **kwargs):
@@ -37,7 +35,7 @@ class BorderedLabel(Label):
         self.color = primary_color
         with self.canvas.before:
             Color(0.93, 0.93, 0.93, 1)
-            self.rect = Rectangle(pos=(0, 0), size=(0, 0))  # Inicializar con valores
+            self.rect = Rectangle(pos=(0, 0), size=(0, 0))  
         self.bind(pos=self._update_rect, size=self._update_rect)
         
     def _update_rect(self, instance, value):
@@ -88,16 +86,13 @@ class PensionApp(App):
         )
         left_panel.add_widget(form_title)
         
-        # Formulario en scroll
         scroll = ScrollView()
         form_grid = GridLayout(cols=2, spacing=15, size_hint_y=None, padding=[10, 10])
         form_grid.bind(minimum_height=form_grid.setter('height'))
         
-        # Estilo para las etiquetas
         label_height = dp(40)
         input_height = dp(40)
         
-        # Datos personales
         form_grid.add_widget(Label(
         ))
         self.edad_input = TextInput(
@@ -157,9 +152,8 @@ class PensionApp(App):
             halign='center'
         )
         form_grid.add_widget(salarios_title)
-        form_grid.add_widget(Label(size_hint_y=None, height=label_height))  # Espacio en blanco
+        form_grid.add_widget(Label(size_hint_y=None, height=label_height))  
         
-        # Campos de salarios
         self.salarios_inputs = []
         for i in range(10):
             form_grid.add_widget(Label(
@@ -179,7 +173,7 @@ class PensionApp(App):
         scroll.add_widget(form_grid)
         left_panel.add_widget(scroll)
         
-        # Botón de cálculo claramente identificado
+        # Botón de cálculo 
         button_layout = AnchorLayout(anchor_x='center', size_hint_y=0.1)
         self.calcular_btn = StyledButton(
             text="CALCULAR MI PENSIÓN", 
@@ -223,7 +217,6 @@ class PensionApp(App):
         # Cómo funciona (con ajustes para visibilidad)
         como_funciona_box = BoxLayout(orientation='vertical', size_hint_y=0.6, spacing=5)
         
-        # Título con fondo para destacar
         title_container = BoxLayout(orientation='vertical', size_hint_y=0.15)
         with title_container.canvas.before:
             Color(0.93, 0.93, 0.93, 1)  # Color gris claro para el fondo
@@ -240,13 +233,10 @@ class PensionApp(App):
         title_container.add_widget(como_funciona_title)
         como_funciona_box.add_widget(title_container)
         
-        # Espacio para ajustar mejor la alineación
         como_funciona_box.add_widget(BoxLayout(size_hint_y=0.05))
         
-        # Container para los pasos con mejor alineación
         steps_box = BoxLayout(orientation='vertical', spacing=20, size_hint_y=0.8, padding=[20, 10])
         
-        # Pasos con mejor formato y alineación
         steps = [
             "1. Complete el formulario con sus datos",
             "2. Ingrese sus salarios de los últimos 10 años",
@@ -272,7 +262,6 @@ class PensionApp(App):
         como_funciona_box.add_widget(steps_box)
         right_panel.add_widget(como_funciona_box)
         
-        # Agregar paneles al contenido
         content.add_widget(left_panel)
         content.add_widget(right_panel)
         main_layout.add_widget(content)
@@ -328,26 +317,26 @@ class PensionApp(App):
         try:
             # Validación de campos
             if not self.edad_input.text:
-                self.mostrar_popup("⚠️ Campo Requerido", "Por favor ingrese su edad.")
+                self.mostrar_popup("Campo Requerido", "Por favor ingrese su edad.")
                 return
                 
             if not self.semanas_input.text:
-                self.mostrar_popup("⚠️ Campo Requerido", "Por favor ingrese las semanas cotizadas.")
+                self.mostrar_popup("Campo Requerido", "Por favor ingrese las semanas cotizadas.")
                 return
                 
             if not self.hijos_input.text:
-                self.mostrar_popup("⚠️ Campo Requerido", "Por favor ingrese la cantidad de hijos.")
+                self.mostrar_popup("Campo Requerido", "Por favor ingrese la cantidad de hijos.")
                 return
                 
             if self.genero_spinner.text == 'Seleccione su género':
-                self.mostrar_popup("⚠️ Campo Requerido", "Por favor seleccione su género.")
+                self.mostrar_popup("Campo Requerido", "Por favor seleccione su género.")
                 return
             
             # Verificar que se ingresaron todos los salarios
             salarios_faltantes = [i+1 for i, s in enumerate(self.salarios_inputs) if not s.text]
             if salarios_faltantes:
                 texto_faltantes = ", ".join(str(i) for i in salarios_faltantes)
-                self.mostrar_popup("⚠️ Campos Incompletos", f"Faltan los salarios de los años: {texto_faltantes}")
+                self.mostrar_popup("Campos Incompletos", f"Faltan los salarios de los años: {texto_faltantes}")
                 return
             
             # Procesar datos
@@ -363,13 +352,13 @@ class PensionApp(App):
             # Mostrar resultado formateado
             resultado_formateado = "${:,.2f}".format(resultado)
             self.mostrar_popup(
-                "✅ RESULTADO DE SU PENSIÓN", 
+                "RESULTADO DE SU PENSIÓN", 
                 f"De acuerdo a los datos proporcionados,\nsu pensión mensual estimada sería de:\n\n{resultado_formateado}"
             )
         except ValueError:
-            self.mostrar_popup("❌ Error de Formato", "Por favor verifique que todos los campos numéricos contengan solo números.")
+            self.mostrar_popup("Error de Formato", "Por favor verifique que todos los campos numéricos contengan solo números.")
         except Exception as e:
-            self.mostrar_popup("❌ Error", f"Se produjo un error inesperado: {str(e)}")
+            self.mostrar_popup("Error", f"Se produjo un error inesperado: {str(e)}")
 
 if __name__ == "__main__":
     PensionApp().run()
