@@ -15,7 +15,7 @@ código_limpio/
 │   │   └── pylogic.py      
 │   └── view/
 │       ├── console.py       
-│       └── kivyApp.py      
+│       └── interfaz.py      
 │
 └── test/
     └── test_1.py           
@@ -86,6 +86,19 @@ Si deseas probar funciones específicas en la consola de Python, sigue estos pas
    ```python
    print(pylogic.pension_total([2000000, 2500000, 2700000, 3000000], "Masculino", 63, 1400, 2))
    ```
+## Interfaz
+Para ejecutar la interfaz grafica se debe hacer lo siguiente:
+
+1. abrir el cmd. el atajo seria Win + R y buscar cmd.
+2. Se debe dirigir a la carpeta de source
+3. Desde la carpeta src del repositorio, se utiliza el comando python .\view\interfaz.py
+4. Ejecutar.
+
+Desde Visual Studio Code
+1. Pararse en la carpeta view,interfaz.py.
+2. Abrir la terminal e installar kivy con el siguiente comando pip install kivy.
+3. En la parte superior se encuentra el siguiente icono (play) clic izquierdo y se ejecutara la interfaz. 
+
 
 ## Manejo de errores
 
@@ -112,6 +125,7 @@ El programa maneja los siguientes errores:
 
 ---
 **Autores: Simon Correa Bravo, David Hernández Mejía**\
+**Interfaz grafica: Miguel Angel guarnizo, Tomas Mercado
 **Repositorio:** [GitHub](https://github.com/David2421b/Calculadora_Pensional.git)
 
 
