@@ -122,14 +122,16 @@ InvalidWeeksError	-> Semanas cotizadas insuficientes
 InvalidDatesError  -> Combinación edad/semanas no válida
 
 
-Autores 👥
-Simón Correa Bravo 
-David Hernández Mejía 
-Miguel Ángel Guarnizo 
-Tomás Mercado
+##Autores 👥
 
-¿Problemas o sugerencias?
-✉️ Abre un issue en el repositorio.
+- Simón Correa Bravo 
+- David Hernández Mejía 
+- Miguel Ángel Guarnizo 
+- Tomás Mercado
+
+##¿Problemas o sugerencias?
+
+- ✉️ Abre un issue en el repositorio.
 
 ## Entrevista  
 📺 [Ver en YouTube](https://youtu.be/5jBNKtJzQe4?si=5xQrhLlG16mk0w0V)  
