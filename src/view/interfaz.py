@@ -288,6 +288,7 @@ class PensionApp(App):
             text=mensaje,
             font_size='16sp',
             halign='center',
+            color=[0.1, 0.1, 0.1, 1],
             size_hint_y=0.7
         ))
         
