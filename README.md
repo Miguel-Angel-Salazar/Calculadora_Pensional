@@ -153,6 +153,10 @@ Ejecuta el comando final para iniciar la compilación:
 - ⏳ Durante el proceso (20-25 minutos aprox.),
 - ✅ se solicitará confirmación interactiva. Presiona y cuando sea necesario.
 - 📁 Al finalizar, se generará la carpeta bin/ con el APK listo para descargar e instalar.
+
+"Link del colab y APK"
+- https://colab.research.google.com/drive/1IivS2KflTNet7oOfvINa6KdvIAkk3H5o
+- https://drive.google.com/file/d/1Gg34229q3c8tvKc_MyjxlzjgsveVojSD/view?usp=sharing
   
 ## Manejo de excepciones 🛡️
 
