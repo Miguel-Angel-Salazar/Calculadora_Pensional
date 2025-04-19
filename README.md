@@ -110,6 +110,50 @@ def calcular_pension(salarios, genero, edad, semanas, hijos):
     # 3. Aplicar factores de ajuste
     # 4. Retornar valor pensional
 ```
+
+## 🛠️ Creación del APK
+
+"⚙️ Configuración inicial en Google Colab"
+
+- Crea un nuevo archivo en Google Colab.
+- Sube los siguientes archivos al entorno:
+- 📄 main.py (Interfaz gráfica desarrollada con Kivy)
+- 📦 pylogic.py (Lógica del programa)
+- 🖼️ logo.png (Icono de la aplicación)
+
+"🚀 Ejecución de comandos"
+
+- Ejecuta los siguientes comandos en orden y en celdas separadas:
+  
+```
+>>> !pip3 install --user --upgrade buildozer
+>>> !sudo apt update
+>>> !sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
+>>> !pip3 install --user --upgrade Cython==0.29.33 virtualenv
+>>> !/root/.local/bin/buildozer init
+```
+"🔧 Configuración del archivo buildozer.spec"
+
+Tras ejecutar buildozer init, se generará el archivo buildozer.spec
+
+Realiza las siguientes modificaciones clave:
+
+- 🏷️ Establece el nombre de la aplicación (title).
+- 📌 Especifica la ruta del icono (logo = logo.png).
+- 📋 En la sección requirements, agrega: python3, kivy, kivymd.
+
+Guarda los cambios y cierra el archivo.
+
+"📤 Generación del APK"
+Ejecuta el comando final para iniciar la compilación:
+
+```
+!/root/.local/bin/buildozer android debug
+```
+- ⏳ Durante el proceso (20-25 minutos aprox.),
+- ✅ se solicitará confirmación interactiva. Presiona y cuando sea necesario.
+- 📁 Al finalizar, se generará la carpeta bin/ con el APK listo para descargar e instalar.
+  
 ## Manejo de excepciones 🛡️
 
 El sistema incluye validaciones específicas para garantizar datos correctos:
